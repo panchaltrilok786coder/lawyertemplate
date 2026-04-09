@@ -164,7 +164,7 @@
               counter.innerText = Math.ceil(count + increment);
               setTimeout(updateCount, 10);
           } else {
-              counter.innerText = target;
+              counter.innerText = target+"+";
           }
       }
       const observer = new IntersectionObserver(entries => {
