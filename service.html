@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero background specific for services page */
+        #hero-services::before {
+            background-image: url('dummy-hero-services.jpg');
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">LawFirm</div>
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero-services" class="hero-section section">
+    <h1>Comprehensive Legal Services</h1>
+    <p>Explore our areas of expertise and see how we can assist you.</p>
+    <div class="hero-buttons">
+        <a href="contact.html" class="btn-primary">Book Consultation</a>
+        <a href="#services-types" class="btn-outline">Learn More</a>
+    </div>
+
+    <!-- Small contact form inside hero -->
+    <form class="contact-form" style="margin-top:2rem; max-width:400px;">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <select>
+            <option>Select Service</option>
+            <option>Corporate Law</option>
+            <option>Family Law</option>
+            <option>Criminal Defense</option>
+        </select>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- TYPES OF SERVICES -->
+<section id="services-types" class="section">
+    <h2>Types of Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Corporate Law</h3>
+            <p>Contracts, compliance, and corporate governance.</p>
+        </div>
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Family Law</h3>
+            <p>Divorce, custody, and family dispute resolution.</p>
+        </div>
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Criminal Defense</h3>
+            <p>Representation in criminal cases and legal support.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DETAILED SERVICE CARDS -->
+<section id="detailed-services" class="section">
+    <h2>Detailed Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Corporate Advisory</h3>
+            <p>Legal advisory for businesses, corporate contracts, and compliance audits.</p>
+        </div>
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Family Dispute Resolution</h3>
+            <p>Guidance and representation for family matters including divorce, custody, and inheritance.</p>
+        </div>
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Criminal Litigation</h3>
+            <p>Defending clients in criminal cases with experienced legal strategies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section id="mission-vision-services" class="section">
+    <h2>Mission & Vision</h2>
+    <p><strong>Mission:</strong> Provide expert legal services with integrity and professionalism.</p>
+    <p><strong>Vision:</strong> To become the most trusted legal partner for individuals and businesses.</p>
+</section>
+
+<!-- MINI CONTACT FORM -->
+<section id="quick-contact-services" class="section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2026 LawFirm. All Rights Reserved.</p>
+</footer>
+
+<script>
+/* ----------------- SECTION ANIMATION ----------------- */
+const sections = document.querySelectorAll('.section');
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, {threshold:0.2});
+sections.forEach(section => sectionObserver.observe(section));
+</script>
+
+</body>
+</html>
