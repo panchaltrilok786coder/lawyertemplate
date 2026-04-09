@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lawyer Home</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Hero background specific */
-        #hero-home::before {
-            background-image: url('dummy-hero-home.jpg');
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lawyer Home</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+    /* Hero background specific */
+    #hero-home::before {
+        background-image: url('dummy-hero-home.jpg');
+    }
+</style>
 </head>
 <body>
 
@@ -19,14 +23,14 @@
     <div class="logo">LawFirm</div>
     <div class="nav-links">
         <a href="home.html">Home</a>
-        <a href="service.html">Services</a>
+        <a href="service.html">Service</a>
         <a href="contact.html">Contact</a>
         <a href="#faq-section">FAQ</a>
     </div>
 </nav>
 
 <!-- HERO -->
-<section id="hero-home" class="hero-section section">
+<section id="hero-home" class="hero-section section" data-aos="zoom-in">
     <h1>Trusted Legal Expertise You Can Rely On</h1>
     <p>Helping individuals and businesses navigate complex legal matters with confidence.</p>
     <div class="hero-buttons">
@@ -36,7 +40,7 @@
 </section>
 
 <!-- ABOUT / SPECIALITY -->
-<section id="about-home" class="section">
+<section id="about-home" class="section" data-aos="fade-up">
     <h2>About Us</h2>
     <p>We specialize in providing expert legal guidance across multiple fields.</p>
     <div class="stats-container">
@@ -54,12 +58,12 @@
         </div>
     </div>
     <div class="card-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
             <img src="dummy-img.jpg" alt="">
             <h3>Client Review 1</h3>
             <p>Excellent service and results.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
             <img src="dummy-img.jpg" alt="">
             <h3>Client Review 2</h3>
             <p>Professional and trustworthy.</p>
@@ -67,16 +71,16 @@
     </div>
 </section>
 
-<!-- SERVICES OVERVIEW -->
-<section id="services-overview" class="section">
-    <h2>Our Services</h2>
+<!-- SERVICE OVERVIEW -->
+<section id="service-overview" class="section" data-aos="fade-up">
+    <h2>Our Service</h2>
     <div class="card-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
             <img src="dummy-img.jpg" alt="">
             <h3>Corporate Law</h3>
             <p>Short description of corporate law services.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
             <img src="dummy-img.jpg" alt="">
             <h3>Family Law</h3>
             <p>Short description of family law services.</p>
@@ -85,14 +89,14 @@
 </section>
 
 <!-- MISSION & VISION -->
-<section id="mission-vision" class="section">
+<section id="mission-vision" class="section" data-aos="fade-up">
     <h2>Our Mission & Vision</h2>
     <p><strong>Mission:</strong> Provide trusted legal guidance.</p>
     <p><strong>Vision:</strong> Achieve excellence in all legal services.</p>
 </section>
 
 <!-- FAQ -->
-<section id="faq-section" class="section">
+<section id="faq-section" class="section" data-aos="fade-up">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
         <h3 class="faq-question">What types of cases do you handle?</h3>
@@ -109,7 +113,7 @@
 </section>
 
 <!-- MINI CONTACT FORM -->
-<section id="quick-contact" class="section">
+<section id="quick-contact" class="section" data-aos="fade-up">
     <h2>Contact Us</h2>
     <form class="contact-form">
         <input type="text" placeholder="Name">
@@ -120,7 +124,7 @@
 </section>
 
 <!-- SOCIAL LINKS -->
-<section id="social-links-home" class="section">
+<section id="social-links-home" class="section" data-aos="fade-up">
     <h2>Follow Us</h2>
     <div>
         <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a>
@@ -132,42 +136,42 @@
     <p>&copy; 2026 LawFirm. All Rights Reserved.</p>
 </footer>
 
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-/* ----------------- FAQ HOVER TOGGLE ----------------- */
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('mouseenter', () => item.classList.add('active'));
-    item.addEventListener('mouseleave', () => item.classList.remove('active'));
-});
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+  });
 
-/* ----------------- STAT COUNTER ----------------- */
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-counters.forEach(counter => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
-        if(count < target){
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 10);
-        } else {
-            counter.innerText = target;
-        }
-    }
-    const observer = new IntersectionObserver(entries => {
-        if(entries[0].isIntersecting) updateCount();
-    }, {threshold:0.5});
-    observer.observe(counter);
-});
+  // FAQ hover toggle
+  document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('mouseenter', () => item.classList.add('active'));
+      item.addEventListener('mouseleave', () => item.classList.remove('active'));
+  });
 
-/* ----------------- SECTION ANIMATION ----------------- */
-const sections = document.querySelectorAll('.section');
-const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-}, {threshold:0.2});
-sections.forEach(section => sectionObserver.observe(section));
+  // Animated stats counter
+  const counters = document.querySelectorAll('.stat-number');
+  const speed = 200;
+  counters.forEach(counter => {
+      const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / speed;
+          if(count < target){
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 10);
+          } else {
+              counter.innerText = target;
+          }
+      }
+      const observer = new IntersectionObserver(entries => {
+          if(entries[0].isIntersecting) updateCount();
+      }, {threshold:0.5});
+      observer.observe(counter);
+  });
 </script>
 
 </body>
