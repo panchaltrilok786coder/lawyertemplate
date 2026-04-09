@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero background specific */
+        #hero-home::before {
+            background-image: url('dummy-hero-home.jpg');
+        }
+    </style>
+</head>
+<body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">LawFirm</div>
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="#faq-section">FAQ</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero-home" class="hero-section section">
+    <h1>Trusted Legal Expertise You Can Rely On</h1>
+    <p>Helping individuals and businesses navigate complex legal matters with confidence.</p>
+    <div class="hero-buttons">
+        <a href="contact.html" class="btn-primary">Book Consultation</a>
+        <a href="#about-home" class="btn-outline">Learn More</a>
+    </div>
+</section>
+
+<!-- ABOUT / SPECIALITY -->
+<section id="about-home" class="section">
+    <h2>About Us</h2>
+    <p>We specialize in providing expert legal guidance across multiple fields.</p>
+    <div class="stats-container">
+        <div class="stats-item">
+            <h3 class="stat-number" data-target="10">0</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stats-item">
+            <h3 class="stat-number" data-target="500">0</h3>
+            <p>Cases Handled</p>
+        </div>
+        <div class="stats-item">
+            <h3 class="stat-number" data-target="95">0</h3>
+            <p>Success Rate %</p>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Client Review 1</h3>
+            <p>Excellent service and results.</p>
+        </div>
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Client Review 2</h3>
+            <p>Professional and trustworthy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section id="services-overview" class="section">
+    <h2>Our Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Corporate Law</h3>
+            <p>Short description of corporate law services.</p>
+        </div>
+        <div class="card">
+            <img src="dummy-img.jpg" alt="">
+            <h3>Family Law</h3>
+            <p>Short description of family law services.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section id="mission-vision" class="section">
+    <h2>Our Mission & Vision</h2>
+    <p><strong>Mission:</strong> Provide trusted legal guidance.</p>
+    <p><strong>Vision:</strong> Achieve excellence in all legal services.</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq-section" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3 class="faq-question">What types of cases do you handle?</h3>
+        <div class="faq-answer">
+            <p>We handle corporate, criminal, family, property, and contract law cases.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3 class="faq-question">How can I book a consultation?</h3>
+        <div class="faq-answer">
+            <p>You can book through our contact form or call/WhatsApp us directly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MINI CONTACT FORM -->
+<section id="quick-contact" class="section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- SOCIAL LINKS -->
+<section id="social-links-home" class="section">
+    <h2>Follow Us</h2>
+    <div>
+        <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2026 LawFirm. All Rights Reserved.</p>
+</footer>
+
+<script>
+/* ----------------- FAQ HOVER TOGGLE ----------------- */
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('mouseenter', () => item.classList.add('active'));
+    item.addEventListener('mouseleave', () => item.classList.remove('active'));
+});
+
+/* ----------------- STAT COUNTER ----------------- */
+const counters = document.querySelectorAll('.stat-number');
+const speed = 200;
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+        if(count < target){
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 10);
+        } else {
+            counter.innerText = target;
+        }
+    }
+    const observer = new IntersectionObserver(entries => {
+        if(entries[0].isIntersecting) updateCount();
+    }, {threshold:0.5});
+    observer.observe(counter);
+});
+
+/* ----------------- SECTION ANIMATION ----------------- */
+const sections = document.querySelectorAll('.section');
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, {threshold:0.2});
+sections.forEach(section => sectionObserver.observe(section));
+</script>
+
+</body>
+</html>
