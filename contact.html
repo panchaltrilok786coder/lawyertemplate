@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lawyer Contact</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Hero background specific for contact page */
-        #hero-contact::before {
-            background-image: url('dummy-hero-contact.jpg');
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lawyer Contact</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+    /* Hero background specific for contact page */
+    #hero-contact::before {
+        background-image: url('dummy-hero-contact.jpg');
+    }
+</style>
 </head>
 <body>
 
@@ -19,13 +23,13 @@
     <div class="logo">LawFirm</div>
     <div class="nav-links">
         <a href="home.html">Home</a>
-        <a href="service.html">Services</a>
+        <a href="service.html">Service</a>
         <a href="contact.html">Contact</a>
     </div>
 </nav>
 
 <!-- HERO / INTRO -->
-<section id="hero-contact" class="hero-section section">
+<section id="hero-contact" class="hero-section section" data-aos="zoom-in">
     <h1>Get in Touch with Our Legal Experts</h1>
     <p>We’re here to answer your questions and provide guidance.</p>
     <div class="hero-buttons">
@@ -34,22 +38,22 @@
 </section>
 
 <!-- OUR INFO -->
-<section id="contact-info" class="section">
+<section id="contact-info" class="section" data-aos="fade-up">
     <h2>Our Information</h2>
     <div class="card-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
             <h3>Address</h3>
             <p>123 Legal Street, Mumbai, India</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
             <h3>Phone</h3>
             <p>+91 9876543210</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
             <h3>WhatsApp</h3>
             <p><a href="#">Chat Now</a></p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
             <h3>Email</h3>
             <p>contact@lawfirm.com</p>
         </div>
@@ -57,7 +61,7 @@
 </section>
 
 <!-- CONTACT FORM -->
-<section id="contact-form-section" class="section">
+<section id="contact-form-section" class="section" data-aos="fade-up">
     <h2>Send Us a Message</h2>
     <form class="contact-form">
         <input type="text" placeholder="Name">
@@ -75,13 +79,13 @@
 </section>
 
 <!-- MAP -->
-<section id="contact-map" class="section">
+<section id="contact-map" class="section" data-aos="fade-up">
     <h2>Our Location</h2>
-    <img src="dummy-map.jpg" alt="Map" style="border-radius:10px;">
+    <img src="dummy-map.jpg" alt="Map" style="border-radius:10px; width:100%; max-width:800px;">
 </section>
 
 <!-- SOCIAL LINKS -->
-<section id="social-links-contact" class="section">
+<section id="social-links-contact" class="section" data-aos="fade-up">
     <h2>Follow Us</h2>
     <div>
         <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a>
@@ -93,15 +97,15 @@
     <p>&copy; 2026 LawFirm. All Rights Reserved.</p>
 </footer>
 
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-/* ----------------- SECTION ANIMATION ----------------- */
-const sections = document.querySelectorAll('.section');
-const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-}, {threshold:0.2});
-sections.forEach(section => sectionObserver.observe(section));
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+  });
 </script>
 
 </body>
