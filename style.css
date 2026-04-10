@@ -283,15 +283,15 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: #111;
+    color: white;
     font-size: 14px;
 }
 
 /* quadrant colors (law theme: subtle gold + neutral) */
-.section1 { top: 0; left: 0; background: #d4af37; border-top-left-radius: 100%; }
-.section2 { top: 0; right: 0; background: #f5e6b3; border-top-right-radius: 100%; }
-.section3 { bottom: 0; right: 0; background: #c0c0c0; border-bottom-right-radius: 100%; }
-.section4 { bottom: 0; left: 0; background: #e6d7a8; border-bottom-left-radius: 100%; }
+.section1 { top: 0; left: 0; background: black; border-top-left-radius: 100%; box-sizing:border-box; border-bottom:2ps solid blue;}
+.section2 { top: 0; right: 0; background: black; border-top-right-radius: 100%; box-sizing:border-box; border-bottom:2px solid blue;}
+.section3 { bottom: 0; right: 0; background: black; border-bottom-right-radius: 100%; box-sizing:border-box; border-top:2px solid blue;}
+.section4 { bottom: 0; left: 0; background: black; border-bottom-left-radius: 100%; box-sizing:border-box; border-top:2px solid blue;}
 
 .circle p {
     margin: 0;
