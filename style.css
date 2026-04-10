@@ -288,7 +288,7 @@ p { font-size: 1rem; margin-bottom: 1rem; }
 }
 
 /* quadrant colors (law theme: subtle gold + neutral) */
-.section1 { top: 0; left: 0; background: black; border-top-left-radius: 100%; box-sizing:border-box; border:2ps solid blue;}
+.section1 { top: 0; left: 0; background: black; border-top-left-radius: 100%; box-sizing:border-box; border:2px solid blue;}
 .section2 { top: 0; right: 0; background: black; border-top-right-radius: 100%; box-sizing:border-box; border:2px solid blue;}
 .section3 { bottom: 0; right: 0; background: black; border-bottom-right-radius: 100%; box-sizing:border-box; border:2px solid blue;}
 .section4 { bottom: 0; left: 0; background: black; border-bottom-left-radius: 100%; box-sizing:border-box; border:2px solid blue;}
