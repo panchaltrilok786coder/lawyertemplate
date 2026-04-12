@@ -10,6 +10,7 @@ body {
     color: #444444;
     background-color: #ffffff;
     line-height: 1.6;
+    width: 100vw;
 }
 
 a {
