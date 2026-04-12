@@ -112,7 +112,10 @@ p { font-size: 1rem; margin-bottom: 1rem; }
 }
 
 .hero-section .hero-buttons {
-    width:100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
     background-color: blue;
 }
   
