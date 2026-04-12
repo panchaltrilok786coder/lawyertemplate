@@ -116,7 +116,6 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     display: flex;
     flex-direction: row;
     height: fit-content;
-    background-color: blue;
 }
   
 .hero-section .hero-buttons a {
